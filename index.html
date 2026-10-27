@@ -1,0 +1,2903 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en" data-theme="dark">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <meta name="theme-color" content="#05050F">
+
+    <meta name="description" content="FORT Production — cinematic video editing, high-retention YouTube content, captions, storytelling and professional post-production.">
+
+    <title>FORT Production | Cinematic Video Editing</title>
+
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+
+    <style>
+
+        :root {
+            color-scheme: dark;
+            --bg: #05070b;
+            --bg-secondary: #090f1a;
+            --surface: rgba(13, 25, 43, .66);
+            --surface-solid: #101b2c;
+            --text: #ffffff;
+            --muted: #a9b8cb;
+            --border: rgba(137, 176, 222, .20);
+            --accent: #376da9;
+            --accent-light: #9bc4f4;
+            --accent-deep: #153e72;
+            --glow: rgba(28, 80, 145, .25);
+            --header: rgba(5, 10, 19, .72);
+            --shadow: 0 18px 55px rgba(0, 0, 0, .30);
+        }
+
+        html[data-theme="light"] {
+            color-scheme: light;
+            --bg: #ffffff;
+            --bg-secondary: #f0f5fb;
+            --surface: rgba(255, 255, 255, .74);
+            --surface-solid: #ffffff;
+            --text: #0b1829;
+            --muted: #53667d;
+            --border: rgba(25, 62, 110, .17);
+            --accent: #174c85;
+            --accent-light: #225d9d;
+            --accent-deep: #092d55;
+            --glow: rgba(39, 95, 158, .12);
+            --header: rgba(255, 255, 255, .76);
+            --shadow: 0 18px 55px rgba(15, 44, 83, .09);
+        }
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+        }
+
+
+
+        html {
+
+            scroll-behavior: smooth;
+
+            scroll-padding-top: 95px;
+
+        }
+
+
+
+        body {
+
+            font-family: 'Inter', sans-serif;
+
+            background: var(--bg);
+
+            color: var(--text);
+
+            line-height: 1.6;
+
+            overflow-x: hidden;
+
+            transition: *background* .35s ease, color .35s ease;
+
+        }
+
+
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            z-index: -2;
+
+            background:
+
+                radial-gradient(ellipse at 15% 5%, var(--glow), transparent 40%),
+
+                radial-gradient(ellipse at 90% 40%, var(--glow), transparent 35%);
+
+        }
+
+
+
+        ::selection {
+
+            background: var(--accent);
+
+            color: #fff;
+
+        }
+
+
+
+        ::-webkit-scrollbar { width: 7px; }
+
+        ::-webkit-scrollbar-track { background: var(--bg); }
+
+        ::-webkit-scrollbar-thumb {
+
+            background: linear-gradient(var(--accent), var(--accent-deep));
+
+            border-radius: 20px;
+
+        }
+
+
+
+        a { color: inherit; }
+
+        button { font: inherit; }
+
+
+
+        .container {
+
+            max-width: 1240px;
+
+            width: 100%;
+
+            margin: 0 auto;
+
+            padding: 0 28px;
+
+        }
+
+
+
+        section {
+
+            position: relative;
+
+            padding: 100px 0;
+
+        }
+
+
+
+        .section-alt {
+
+            background: var(--bg-secondary);
+
+            border-top: 1px solid var(--border);
+
+            border-bottom: 1px solid var(--border);
+
+        }
+
+
+
+        h2 {
+
+            font-size: clamp(2rem, 4vw, 3.1rem);
+
+            font-weight: 800;
+
+            letter-spacing: -1.7px;
+
+            line-height: 1.15;
+
+            margin-bottom: 17px;
+
+        }
+
+
+
+        .gradient-text {
+
+            background: linear-gradient(115deg, var(--accent-light), var(--accent), var(--accent-light));
+
+            -webkit-background-clip: text;
+
+            background-clip: text;
+
+            color: transparent;
+
+        }
+
+
+
+        .section-sub {
+
+            max-width: 640px;
+
+            margin-bottom: 42px;
+
+            font-size: 1.04rem;
+
+            color: var(--muted);
+
+        }
+
+
+
+        .section-heading-center {
+
+            text-align: center;
+
+        }
+
+
+
+        .section-heading-center .section-sub {
+
+            margin-left: auto;
+
+            margin-right: auto;
+
+        }
+
+
+
+        .eyebrow {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            padding: 8px 14px;
+
+            border: 1px solid var(--border);
+
+            background: var(--surface);
+
+            color: var(--accent-light);
+
+            border-radius: 40px;
+
+            font-size: .77rem;
+
+            font-weight: 700;
+
+            letter-spacing: 1.1px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 22px;
+
+        }
+
+
+
+        .eyebrow-dot {
+
+            height: 7px;
+
+            width: 7px;
+
+            border-radius: 50%;
+
+            background: var(--accent);
+
+            box-shadow: 0 0 14px var(--accent);
+
+        }
+
+
+
+        .btn {
+
+            display: inline-flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 10px;
+
+            padding: 14px 25px;
+
+            border-radius: 50px;
+
+            text-decoration: none;
+
+            font-weight: 700;
+
+            font-size: .94rem;
+
+            transition: transform .25s, box-shadow .25s, *background* .25s;
+
+            cursor: pointer;
+
+        }
+
+
+
+        .btn:hover {
+
+            transform: translateY(-3px);
+
+        }
+
+
+
+        .btn-primary {
+
+            color: white;
+
+            border: 1px solid transparent;
+
+            background: linear-gradient(110deg, #102e55, #316eac);
+
+            box-shadow: 0 9px 30px rgba(22, 65, 119, .26);
+
+        }
+
+
+
+        .btn-primary:hover {
+
+            box-shadow: 0 13px 38px rgba(22, 65, 119, .4);
+
+        }
+
+
+
+        .btn-outline {
+
+            color: var(--text);
+
+            border: 1px solid var(--border);
+
+            background: var(--surface);
+
+        }
+
+
+
+        .btn-outline:hover {
+
+            border-color: var(--accent);
+
+            background: var(--glow);
+
+        }
+
+
+
+        /* Navigation */
+
+
+
+        header {
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            background: var(--header);
+
+            border-bottom: 1px solid var(--border);
+
+            backdrop-filter: blur(26px);
+
+            -webkit-backdrop-filter: blur(26px);
+
+        }
+
+
+
+        nav {
+
+            min-height: 82px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 22px;
+
+        }
+
+
+
+        .logo {
+
+            flex-shrink: 0;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            text-decoration: none;
+
+            font-size: 1.6rem;
+
+            font-weight: 900;
+
+            letter-spacing: -1.1px;
+
+        }
+
+
+
+        .logo-mark {
+
+            display: grid;
+
+            place-items: center;
+
+            width: 39px;
+
+            height: 39px;
+
+            border-radius: 12px;
+
+            color: #fff;
+
+            background: linear-gradient(135deg, var(--accent-deep), var(--accent-light));
+
+            box-shadow: 0 0 25px rgba(22, 65, 119, .3);
+
+        }
+
+
+
+        .logo .dot { color: var(--accent); }
+
+
+
+        .nav-right {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: flex-end;
+
+            gap: 22px;
+
+        }
+
+
+
+        .nav-links {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 25px;
+
+        }
+
+
+
+        .nav-links a {
+
+            color: var(--muted);
+
+            font-size: .9rem;
+
+            font-weight: 600;
+
+            text-decoration: none;
+
+            transition: color .2s;
+
+        }
+
+
+
+        .nav-links a:hover { color: var(--accent-light); }
+
+
+
+        .theme-toggle {
+
+            width: 47px;
+
+            height: 47px;
+
+            flex-shrink: 0;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 9px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 50%;
+
+            background: var(--surface);
+
+            color: var(--text);
+
+            cursor: pointer;
+
+            transition: transform .25s, border-color .25s;
+
+        }
+
+
+
+        .theme-toggle:hover {
+
+            transform: rotate(-10deg) scale(1.06);
+
+            border-color: var(--accent);
+
+        }
+
+
+
+        .theme-toggle i {
+
+            font-size: 1.1rem;
+
+            color: var(--accent-light);
+
+        }
+
+
+
+        /* Hero */
+
+
+
+        .hero {
+
+            min-height: 590px;
+
+            padding: 100px 0 95px;
+
+            overflow: hidden;
+
+        }
+
+
+
+        .hero::after {
+
+            content: "F";
+
+            position: absolute;
+
+            z-index: -1;
+
+            right: 5%;
+
+            top: 0;
+
+            font-size: clamp(22rem, 42vw, 40rem);
+
+            line-height: 1;
+
+            font-weight: 900;
+
+            color: var(--accent);
+
+            opacity: .035;
+
+            pointer-events: none;
+
+        }
+
+
+
+        .hero-content {
+
+            max-width: 850px;
+
+            position: relative;
+
+        }
+
+
+
+        .hero h1 {
+
+            max-width: 900px;
+
+            font-size: clamp(3rem, 7vw, 5.7rem);
+
+            line-height: 1.04;
+
+            letter-spacing: -4px;
+
+            font-weight: 900;
+
+        }
+
+
+
+        .hero p {
+
+            max-width: 660px;
+
+            margin: 26px 0 31px;
+
+            font-size: clamp(1rem, 2vw, 1.17rem);
+
+            color: var(--muted);
+
+        }
+
+
+
+        .hero-actions {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 13px;
+
+        }
+
+
+
+        .hero-meta {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 23px;
+
+            margin-top: 40px;
+
+            color: var(--muted);
+
+            font-size: .85rem;
+
+        }
+
+
+
+        .hero-meta span {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+        }
+
+
+
+        .hero-meta i { color: var(--accent); }
+
+
+
+        .hero-line {
+
+            width: 75px;
+
+            height: 3px;
+
+            border-radius: 5px;
+
+            background: linear-gradient(90deg, var(--accent), transparent);
+
+            margin-bottom: 24px;
+
+        }
+
+
+
+        /* About */
+
+
+
+        .about-copy {
+
+            max-width: 850px;
+
+            margin: 0 auto;
+
+        }
+
+
+
+        .about-copy p {
+
+            margin-bottom: 18px;
+
+            color: var(--muted);
+
+            font-size: 1.04rem;
+
+        }
+
+
+
+        .about-copy strong { color: var(--text); }
+
+
+
+        /* Cards */
+
+
+
+        .services-grid,
+
+        .portfolio-grid,
+
+        .testimonial-grid,
+
+        .tools-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+
+            gap: 22px;
+
+        }
+
+
+
+        .service-card {
+
+            padding: 29px 25px;
+
+            border-radius: 23px;
+
+            border: 1px solid var(--border);
+
+            background: var(--surface);
+
+            box-shadow: var(--shadow);
+
+            transition: transform .3s, border-color .3s, box-shadow .3s;
+
+        }
+
+
+
+        .service-card:hover,
+
+        .tool-card:hover {
+
+            transform: translateY(-7px);
+
+            border-color: var(--accent);
+
+            box-shadow: 0 18px 45px var(--glow);
+
+        }
+
+
+
+        .service-icon {
+
+            width: 53px;
+
+            height: 53px;
+
+            display: grid;
+
+            place-items: center;
+
+            margin-bottom: 20px;
+
+            border-radius: 16px;
+
+            color: var(--accent-light);
+
+            background: var(--glow);
+
+            border: 1px solid var(--border);
+
+            font-size: 1.45rem;
+
+        }
+
+
+
+        .service-card h3 {
+
+            font-size: 1.14rem;
+
+            margin-bottom: 10px;
+
+        }
+
+
+
+        .service-card p {
+
+            color: var(--muted);
+
+            font-size: .92rem;
+
+        }
+
+
+
+        /* Portfolio */
+
+
+
+        .portfolio-grid { gap: 24px; }
+
+
+
+        .portfolio-item {
+
+            min-width: 0;
+
+            overflow: hidden;
+
+            border: 1px solid var(--border);
+
+            border-radius: 21px;
+
+            background: var(--surface);
+
+            box-shadow: var(--shadow);
+
+            transition: transform .3s, border-color .3s;
+
+        }
+
+
+
+        .portfolio-item:hover {
+
+            transform: translateY(-6px);
+
+            border-color: var(--accent);
+
+        }
+
+
+
+        .video-wrapper {
+
+            position: relative;
+
+            width: 100%;
+
+            aspect-ratio: 16 / 9;
+
+            background: #050509;
+
+            overflow: hidden;
+
+        }
+
+
+
+        .video-wrapper iframe {
+
+            display: block;
+
+            width: 100%;
+
+            height: 100%;
+
+            border: 0;
+
+        }
+
+
+
+        .portfolio-info { padding: 20px; }
+
+
+
+        .portfolio-info h3 {
+
+            font-size: 1rem;
+
+            line-height: 1.5;
+
+            margin-bottom: 11px;
+
+        }
+
+
+
+        .portfolio-meta {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 10px;
+
+        }
+
+
+
+        .badge-cat {
+
+            display: inline-block;
+
+            border: 1px solid var(--border);
+
+            border-radius: 50px;
+
+            padding: 5px 10px;
+
+            font-size: .7rem;
+
+            font-weight: 700;
+
+            color: var(--accent-light);
+
+            background: var(--glow);
+
+        }
+
+
+
+        .video-number {
+
+            color: var(--muted);
+
+            font-size: .75rem;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+
+        }
+
+
+
+        .portfolio-bottom {
+
+            margin-top: 35px;
+
+            text-align: center;
+
+        }
+
+
+
+        /* Tools */
+
+
+
+        .tool-card {
+
+            position: relative;
+
+            overflow: hidden;
+
+            min-height: 195px;
+
+            padding: 30px 24px;
+
+            background: var(--surface);
+
+            border: 1px solid var(--border);
+
+            border-radius: 23px;
+
+            box-shadow: var(--shadow);
+
+            transition: transform .3s, border-color .3s, box-shadow .3s;
+
+        }
+
+
+
+        .tool-card::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 110px;
+
+            height: 110px;
+
+            border-radius: 50%;
+
+            right: -45px;
+
+            bottom: -45px;
+
+            background: var(--accent);
+
+            opacity: .09;
+
+            filter: blur(20px);
+
+        }
+
+
+
+        .tool-icon {
+
+            display: grid;
+
+            place-items: center;
+
+            width: 62px;
+
+            height: 62px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 18px;
+
+            margin-bottom: 21px;
+
+            background: var(--glow);
+
+            color: var(--accent-light);
+
+            font-size: 1.8rem;
+
+        }
+
+
+
+        .tool-card h3 {
+
+            font-size: 1.12rem;
+
+            margin-bottom: 6px;
+
+        }
+
+
+
+        .tool-card p {
+
+            color: var(--muted);
+
+            font-size: .86rem;
+
+        }
+
+
+
+        .tools-note {
+
+            text-align: center;
+
+            color: var(--muted);
+
+            font-size: .87rem;
+
+            margin-top: 28px;
+
+        }
+
+
+
+        /* Why me */
+
+
+
+        .features-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+
+            gap: 20px;
+
+        }
+
+
+
+        .feature-item {
+
+            padding: 28px 18px;
+
+            text-align: center;
+
+            background: var(--surface);
+
+            border: 1px solid var(--border);
+
+            border-radius: 22px;
+
+            transition: transform .25s, border-color .25s;
+
+        }
+
+
+
+        .feature-item:hover {
+
+            transform: translateY(-5px);
+
+            border-color: var(--accent);
+
+        }
+
+
+
+        .feature-item i {
+
+            color: var(--accent-light);
+
+            font-size: 2rem;
+
+            margin-bottom: 15px;
+
+        }
+
+
+
+        .feature-item h3 {
+
+            font-size: 1rem;
+
+            margin-bottom: 9px;
+
+        }
+
+
+
+        .feature-item p {
+
+            font-size: .85rem;
+
+            color: var(--muted);
+
+        }
+
+
+
+        /* Testimonials */
+
+
+
+        .testimonial-card {
+
+            padding: 25px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 22px;
+
+            background: var(--surface);
+
+        }
+
+
+
+        .stars {
+
+            color: #F59E0B;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+
+        .testimonial-text {
+
+            color: var(--muted);
+
+            font-size: .94rem;
+
+            font-style: italic;
+
+            margin-bottom: 20px;
+
+        }
+
+
+
+        .client-name {
+
+            font-weight: 700;
+
+            font-size: .87rem;
+
+        }
+
+
+
+        /* Contact */
+
+
+
+        .contact-section {
+
+            background:
+
+                radial-gradient(ellipse at 50% 100%, var(--glow), transparent 65%),
+
+                var(--bg-secondary);
+
+        }
+
+
+
+        .contact-inner {
+
+            max-width: 800px;
+
+            margin: 0 auto;
+
+            text-align: center;
+
+        }
+
+
+
+        .contact-inner > p {
+
+            color: var(--muted);
+
+            font-size: 1.03rem;
+
+            margin: 15px auto 28px;
+
+            max-width: 630px;
+
+        }
+
+
+
+        .contact-links {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+            gap: 13px;
+
+            margin-top: 30px;
+
+        }
+
+
+
+        .contact-card {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 11px;
+
+            padding: 14px 19px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 50px;
+
+            background: var(--surface);
+
+            color: var(--text);
+
+            text-decoration: none;
+
+            font-weight: 600;
+
+            font-size: .88rem;
+
+            transition: transform .25s, border-color .25s, *background* .25s;
+
+            overflow-wrap: anywhere;
+
+        }
+
+
+
+        .contact-card i {
+
+            color: var(--accent-light);
+
+            font-size: 1.15rem;
+
+        }
+
+
+
+        .contact-card:hover {
+
+            transform: translateY(-4px);
+
+            border-color: var(--accent);
+
+            background: var(--glow);
+
+        }
+
+
+
+        .contact-note {
+
+            margin-top: 25px;
+
+            color: var(--muted);
+
+            font-size: .82rem;
+
+        }
+
+
+
+        footer {
+
+            padding: 27px 20px;
+
+            border-top: 1px solid var(--border);
+
+            text-align: center;
+
+            color: var(--muted);
+
+            font-size: .83rem;
+
+        }
+
+
+
+        footer strong { color: var(--accent-light); }
+
+
+
+        /* Cinematic scroll reveals */
+
+
+
+        .fade-up {
+
+            opacity: 0;
+
+            transform: translateY(24px);
+
+            transition: opacity .7s ease, transform .7s cubic-bezier(.2,.75,.3,1);
+
+        }
+
+
+
+        .fade-up.visible {
+
+            opacity: 1;
+
+            transform: translateY(0);
+
+        }
+
+
+
+        /* Pointer glow */
+
+
+
+        .cursor-glow {
+
+            position: fixed;
+
+            width: 330px;
+
+            height: 330px;
+
+            border-radius: 50%;
+
+            pointer-events: none;
+
+            z-index: -1;
+
+            background: radial-gradient(circle, var(--glow), transparent 70%);
+
+            transform: translate(-50%, -50%);
+
+            opacity: .8;
+
+        }
+
+
+
+        @media (hover: none), (max-width: 768px) {
+
+            .cursor-glow { display: none; }
+
+        }
+
+
+
+        @media (max-width: 1000px) {
+
+            .nav-links { gap: 16px; }
+
+            .services-grid, .portfolio-grid, .testimonial-grid, .tools-grid {
+
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+
+            }
+
+            .features-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+            .hero { min-height: auto; }
+
+        }
+
+
+
+        @media (max-width: 760px) {
+
+            .container { padding: 0 20px; }
+
+            section { padding: 72px 0; }
+
+            nav {
+
+                min-height: 75px;
+
+                flex-wrap: wrap;
+
+                padding: 13px 0;
+
+            }
+
+            .nav-right { gap: 12px; }
+
+            .nav-links {
+
+                order: 2;
+
+                width: 100%;
+
+                justify-content: center;
+
+                flex-wrap: wrap;
+
+                gap: 13px 21px;
+
+                padding: 4px 0 8px;
+
+            }
+
+            .nav-links a { font-size: .82rem; }
+
+            .logo { font-size: 1.4rem; }
+
+            .logo-mark { width: 35px; height: 35px; }
+
+            .theme-toggle { width: 42px; height: 42px; }
+
+            .hero { padding: 70px 0; text-align: center; }
+
+            .hero-content { margin: 0 auto; }
+
+            .hero h1 { letter-spacing: -2px; }
+
+            .hero p { margin: 22px auto 28px; }
+
+            .hero-actions, .hero-meta { justify-content: center; }
+
+            .hero-line { margin-left: auto; margin-right: auto; }
+
+            .services-grid, .portfolio-grid, .testimonial-grid, .tools-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 17px;
+
+            }
+
+            .features-grid { gap: 14px; }
+
+            .section-sub { font-size: .96rem; }
+
+        }
+
+
+
+        @media (max-width: 450px) {
+
+            .container { padding: 0 16px; }
+
+            section { padding: 60px 0; }
+
+            .hero h1 { font-size: 2.55rem; }
+
+            h2 { font-size: 1.9rem; letter-spacing: -1px; }
+
+            .hero-actions .btn { width: 100%; }
+
+            .hero-meta { gap: 12px; }
+
+            .hero-meta span { font-size: .77rem; }
+
+            .features-grid { grid-template-columns: 1fr; }
+
+            .contact-links { flex-direction: column; }
+
+            .contact-card { width: 100%; }
+
+            .service-card, .testimonial-card { padding: 23px 20px; }
+
+        }
+
+
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *, *::before, *::after {
+
+                scroll-behavior: auto !important;
+
+                animation-duration: .01ms !important;
+
+                transition-duration: .01ms !important;
+
+            }
+
+            .fade-up { opacity: 1; transform: none; }
+
+        }
+
+    </style>
+
+</head>
+
+
+
+<body>
+
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+
+
+<header>
+
+    <div class="container">
+
+        <nav aria-label="Main navigation">
+
+            <a class="logo" href="#home" aria-label="FORT Production home">
+
+                <span class="logo-mark"><i class="fas fa-play"></i></span>
+
+                <span>FORT <span class="dot">Production</span></span>
+
+            </a>
+
+
+
+            <div class="nav-right">
+
+                <div class="nav-links">
+
+                    <a href="#about">About</a>
+
+                    <a href="#services">Services</a>
+
+                    <a href="#portfolio">Portfolio</a>
+
+                    <a href="#tools">Tools</a>
+
+                    <a href="#contact">Contact</a>
+
+                </div>
+
+
+
+                <button class="theme-toggle" id="themeToggle"
+
+                        type="button" aria-label="Switch to day theme"
+
+                        title="Switch theme">
+
+                    <i class="fas fa-moon" id="themeIcon" aria-hidden="true"></i>
+
+                </button>
+
+            </div>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<main>
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+
+        <div class="container">
+
+            <div class="hero-content fade-up">
+
+                <div class="eyebrow">
+
+                    <span class="eyebrow-dot"></span>
+
+                    Video Editing & Post-Production
+
+                </div>
+
+
+
+                <div class="hero-line"></div>
+
+
+
+                <h1>
+
+                    Turning Raw Footage Into
+
+                    <span class="gradient-text">Cinematic Stories.</span>
+
+                </h1>
+
+
+
+                <p>
+
+                    Captions that hook. Stories that connect. Edits that keep
+
+                    viewers watching. FORT Production creates engaging video content
+
+                    with cinematic pacing, professional sound design and
+
+                    retention-focused storytelling.
+
+                </p>
+
+
+
+                <div class="hero-actions">
+
+                    <a href="#contact" class="btn btn-primary">
+
+                        Let's Work Together <i class="fas fa-arrow-right"></i>
+
+                    </a>
+
+                    <a href="#portfolio" class="btn btn-outline">
+
+                        <i class="fas fa-play-circle"></i> Explore My Work
+
+                    </a>
+
+                </div>
+
+
+
+                <div class="hero-meta">
+
+                    <span><i class="fas fa-film"></i> Cinematic Editing</span>
+
+                    <span><i class="fas fa-closed-captioning"></i> Engaging Captions</span>
+
+                    <span><i class="fas fa-headphones"></i> Sound Design</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ABOUT -->
+
+    <section id="about" class="section-alt">
+
+        <div class="container">
+
+            <div class="about-copy fade-up">
+
+                <div class="eyebrow"><span class="eyebrow-dot"></span> About FORT</div>
+
+                <h2>More Than Editing.<br><span class="gradient-text">It's Storytelling.</span></h2>
+
+
+
+                <p>
+
+                    I'm a video editor focused on transforming raw footage into
+
+                    engaging, polished content. Every cut, caption, sound effect
+
+                    and transition has a purpose: to make the story clearer and
+
+                    the viewing experience stronger.
+
+                </p>
+
+
+
+                <p>
+
+                    From YouTube content and podcasts to cinematic edits,
+
+                    fitness videos, real estate and social media projects,
+
+                    I combine creative storytelling with clean execution to
+
+                    help creators communicate their ideas.
+
+                </p>
+
+
+
+                <p>
+
+                    <strong>My approach:</strong> understand the message, build
+
+                    a strong opening, maintain a natural pace and finish with
+
+                    visuals and sound that feel professional.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- SERVICES -->
+
+    <section id="services">
+
+        <div class="container">
+
+            <div class="fade-up">
+
+                <div class="eyebrow"><span class="eyebrow-dot"></span> What I Do</div>
+
+                <h2>Editing That Makes<br><span class="gradient-text">Every Second Count.</span></h2>
+
+                <p class="section-sub">
+
+                    Creative post-production for creators and brands that
+
+                    want polished visuals, clear storytelling and engaging content.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="services-grid">
+
+                <article class="service-card fade-up">
+
+                    <div class="service-icon"><i class="fas fa-closed-captioning"></i></div>
+
+                    <h3>Dynamic Captions</h3>
+
+                    <p>Readable, animated subtitles with thoughtful emphasis, timing and styling for engaging content.</p>
+
+                </article>
+
+
+
+                <article class="service-card fade-up">
+
+                    <div class="service-icon"><i class="fab fa-youtube"></i></div>
+
+                    <h3>YouTube Editing</h3>
+
+                    <p>Long-form videos and Shorts with structured storytelling, clean cuts, B-roll and visual variety.</p>
+
+                </article>
+
+
+
+                <article class="service-card fade-up">
+
+                    <div class="service-icon"><i class="fas fa-microphone-alt"></i></div>
+
+                    <h3>Podcast Editing</h3>
+
+                    <p>Polished podcast videos, engaging clips, clean pacing, captions and sound improvements.</p>
+
+                </article>
+
+
+
+                <article class="service-card fade-up">
+
+                    <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+
+                    <h3>Retention-Focused Editing</h3>
+
+                    <p>Strong openings, purposeful cuts, visual hooks and pacing designed around the story.</p>
+
+                </article>
+
+
+
+                <article class="service-card fade-up">
+
+                    <div class="service-icon"><i class="fab fa-instagram"></i></div>
+
+                    <h3>Social Media Content</h3>
+
+                    <p>Reels, vertical videos and promotional edits tailored to each platform and audience.</p>
+
+                </article>
+
+
+
+                <article class="service-card fade-up">
+
+                    <div class="service-icon"><i class="fas fa-building"></i></div>
+
+                    <h3>Real Estate Videos</h3>
+
+                    <p>Property tours with smooth transitions, refined color, cinematic pacing and clean presentation.</p>
+
+                </article>
+
+
+
+                <article class="service-card fade-up">
+
+                    <div class="service-icon"><i class="fas fa-dumbbell"></i></div>
+
+                    <h3>Fitness Content</h3>
+
+                    <p>Motivational edits, workout videos, energetic sound design and clear on-screen messaging.</p>
+
+                </article>
+
+
+
+                <article class="service-card fade-up">
+
+                    <div class="service-icon"><i class="fas fa-film"></i></div>
+
+                    <h3>Cinematic Movie Edits</h3>
+
+                    <p>Dramatic pacing, music synchronization, visual atmosphere and impactful sound design.</p>
+
+                </article>
+
+
+
+                <article class="service-card fade-up">
+
+                    <div class="service-icon"><i class="fas fa-user-tie"></i></div>
+
+                    <h3>Talking-Head Videos</h3>
+
+                    <p>Clean cuts, well-timed captions, purposeful zooms, relevant B-roll and supporting graphics.</p>
+
+                </article>
+
+
+
+                <article class="service-card fade-up">
+
+                    <div class="service-icon"><i class="fas fa-book-open"></i></div>
+
+                    <h3>Visual Storytelling</h3>
+
+                    <p>Combining footage, music, pacing and sound to communicate ideas with clarity and emotion.</p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- PORTFOLIO: EXACTLY 11 VIDEOS -->
+
+    <section id="portfolio" class="section-alt">
+
+        <div class="container">
+
+            <div class="fade-up">
+
+                <div class="eyebrow"><span class="eyebrow-dot"></span> Selected Work</div>
+
+                <h2>My <span class="gradient-text">Work.</span></h2>
+
+                <p class="section-sub">
+
+                    Explore selected video edits. Each project showcases
+
+                    storytelling, pacing, visuals and editing techniques.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="portfolio-grid">
+
+
+
+                <!-- VIDEO 1 -->
+
+                <article class="portfolio-item fade-up">
+
+                    <div class="video-wrapper">
+
+                        <iframe src="https://drive.google.com/file/d/1_m-PC3YnbAh4UBhMjT0lay_i-1e7PN9S/preview"
+
+                            title="FORT Production Portfolio Video 1"
+
+                            loading="lazy" allow="autoplay; fullscreen"
+
+                            allowfullscreen></iframe>
+
+                    </div>
+
+                    <div class="portfolio-info">
+
+                        <h3>Cinematic Video Edit</h3>
+
+                        <div class="portfolio-meta">
+
+                            <span class="badge-cat">Cinematic</span>
+
+                            <span class="video-number">PROJECT 01</span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- VIDEO 2 -->
+
+                <article class="portfolio-item fade-up">
+
+                    <div class="video-wrapper">
+
+                        <iframe src="https://drive.google.com/file/d/1dy7wAjbOXxxO-1szlULXg9ZB8e4K78jX/preview"
+
+                            title="FORT Production Portfolio Video 2"
+
+                            loading="lazy" allow="autoplay; fullscreen"
+
+                            allowfullscreen></iframe>
+
+                    </div>
+
+                    <div class="portfolio-info">
+
+                        <h3>Storytelling & Visual Flow</h3>
+
+                        <div class="portfolio-meta">
+
+                            <span class="badge-cat">Storytelling</span>
+
+                            <span class="video-number">PROJECT 02</span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- VIDEO 3 -->
+
+                <article class="portfolio-item fade-up">
+
+                    <div class="video-wrapper">
+
+                        <iframe src="https://drive.google.com/file/d/1SXp8R205UpYyvfIfkNOetuw9sBvkogIB/preview"
+
+                            title="FORT Production Portfolio Video 3"
+
+                            loading="lazy" allow="autoplay; fullscreen"
+
+                            allowfullscreen></iframe>
+
+                    </div>
+
+                    <div class="portfolio-info">
+
+                        <h3>Captions & Motion Editing</h3>
+
+                        <div class="portfolio-meta">
+
+                            <span class="badge-cat">Motion & Captions</span>
+
+                            <span class="video-number">PROJECT 03</span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- VIDEO 4 -->
+
+                <article class="portfolio-item fade-up">
+
+                    <div class="video-wrapper">
+
+                        <iframe src="https://drive.google.com/file/d/1xxWqUidmL5IXWYsPf-37VAhclbZ0vLsh/preview"
+
+                            title="FORT Production Portfolio Video 4"
+
+                            loading="lazy" allow="autoplay; fullscreen"
+
+                            allowfullscreen></iframe>
+
+                    </div>
+
+                    <div class="portfolio-info">
+
+                        <h3>Dynamic Pacing & Transitions</h3>
+
+                        <div class="portfolio-meta">
+
+                            <span class="badge-cat">Transitions</span>
+
+                            <span class="video-number">PROJECT 04</span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- VIDEO 5 -->
+
+                <article class="portfolio-item fade-up">
+
+                    <div class="video-wrapper">
+
+                        <iframe src="https://drive.google.com/file/d/1sYx_WUOIk6FUJSy23KIsAvcStBO57AJ9/preview"
+
+                            title="FORT Production Portfolio Video 5"
+
+                            loading="lazy" allow="autoplay; fullscreen"
+
+                            allowfullscreen></iframe>
+
+                    </div>
+
+                    <div class="portfolio-info">
+
+                        <h3>Creative Video Production</h3>
+
+                        <div class="portfolio-meta">
+
+                            <span class="badge-cat">Video Editing</span>
+
+                            <span class="video-number">PROJECT 05</span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- VIDEO 6 -->
+
+                <article class="portfolio-item fade-up">
+
+                    <div class="video-wrapper">
+
+                        <iframe src="https://drive.google.com/file/d/1H0LOYkAuVJ69xqPDwSqzFcJadnXT30vc/preview"
+
+                            title="FORT Production Portfolio Video 6"
+
+                            loading="lazy" allow="autoplay; fullscreen"
+
+                            allowfullscreen></iframe>
+
+                    </div>
+
+                    <div class="portfolio-info">
+
+                        <h3>Visual Storytelling Edit</h3>
+
+                        <div class="portfolio-meta">
+
+                            <span class="badge-cat">Creative Edit</span>
+
+                            <span class="video-number">PROJECT 06</span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- VIDEO 7 -->
+
+                <article class="portfolio-item fade-up">
+
+                    <div class="video-wrapper">
+
+                        <iframe src="https://drive.google.com/file/d/1p_X6NVVRwEnYbtFQ8wTo1XR0hu-Vk_mR/preview"
+
+                            title="FORT Production Portfolio Video 7"
+
+                            loading="lazy" allow="autoplay; fullscreen"
+
+                            allowfullscreen></iframe>
+
+                    </div>
+
+                    <div class="portfolio-info">
+
+                        <h3>Professional Content Edit</h3>
+
+                        <div class="portfolio-meta">
+
+                            <span class="badge-cat">Content</span>
+
+                            <span class="video-number">PROJECT 07</span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- VIDEO 8 -->
+
+                <article class="portfolio-item fade-up">
+
+                    <div class="video-wrapper">
+
+                        <iframe src="https://drive.google.com/file/d/15WzLjBLbw8DkH03tdPrZoVqEkOTiUqXA/preview"
+
+                            title="FORT Production Portfolio Video 8"
+
+                            loading="lazy" allow="autoplay; fullscreen"
+
+                            allowfullscreen></iframe>
+
+                    </div>
+
+                    <div class="portfolio-info">
+
+                        <h3>Editing & Sound Design</h3>
+
+                        <div class="portfolio-meta">
+
+                            <span class="badge-cat">Sound Design</span>
+
+                            <span class="video-number">PROJECT 08</span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- VIDEO 9 -->
+
+                <article class="portfolio-item fade-up">
+
+                    <div class="video-wrapper">
+
+                        <iframe src="https://drive.google.com/file/d/1bHKEua5HlIVt29RcN98m6bQgo-f7Lwcs/preview"
+
+                            title="FORT Production Portfolio Video 9"
+
+                            loading="lazy" allow="autoplay; fullscreen"
+
+                            allowfullscreen></iframe>
+
+                    </div>
+
+                    <div class="portfolio-info">
+
+                        <h3>Creative Motion & Cuts</h3>
+
+                        <div class="portfolio-meta">
+
+                            <span class="badge-cat">Motion Editing</span>
+
+                            <span class="video-number">PROJECT 09</span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- VIDEO 10 -->
+
+                <article class="portfolio-item fade-up">
+
+                    <div class="video-wrapper">
+
+                        <iframe src="https://drive.google.com/file/d/1jDUK1-rcfQqVNKQ5ORZvvXF1XsRd1od0/preview"
+
+                            title="FORT Production Portfolio Video 10"
+
+                            loading="lazy" allow="autoplay; fullscreen"
+
+                            allowfullscreen></iframe>
+
+                    </div>
+
+                    <div class="portfolio-info">
+
+                        <h3>Polished Video Production</h3>
+
+                        <div class="portfolio-meta">
+
+                            <span class="badge-cat">Post-Production</span>
+
+                            <span class="video-number">PROJECT 10</span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- VIDEO 11 -->
+
+                <article class="portfolio-item fade-up">
+
+                    <div class="video-wrapper">
+
+                        <iframe src="https://drive.google.com/file/d/1Zu3dtkTYArc4cvQJt-6312y_k-FBGmkI/preview"
+
+                            title="FORT Production Portfolio Video 11"
+
+                            loading="lazy" allow="autoplay; fullscreen"
+
+                            allowfullscreen></iframe>
+
+                    </div>
+
+                    <div class="portfolio-info">
+
+                        <h3>Final Featured Project</h3>
+
+                        <div class="portfolio-meta">
+
+                            <span class="badge-cat">Featured Work</span>
+
+                            <span class="video-number">PROJECT 11</span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+            </div>
+
+
+
+            <div class="portfolio-bottom fade-up">
+
+                <a href="#contact" class="btn btn-primary">
+
+                    Have a Project in Mind? <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- TOOLS -->
+
+    <section id="tools">
+
+        <div class="container">
+
+            <div class="fade-up section-heading-center">
+
+                <div class="eyebrow"><span class="eyebrow-dot"></span> My Workflow</div>
+
+                <h2>Tools Behind the <span class="gradient-text">Final Cut.</span></h2>
+
+                <p class="section-sub">
+
+                    Professional editing software used for creative editing,
+
+                    post-production, motion graphics and color work.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="tools-grid">
+
+                <article class="tool-card fade-up">
+
+                    <div class="tool-icon"><i class="fas fa-scissors"></i></div>
+
+                    <h3>CapCut</h3>
+
+                    <p>Captions, social media edits, fast-paced cuts and creative short-form content.</p>
+
+                </article>
+
+
+
+                <article class="tool-card fade-up">
+
+                    <div class="tool-icon"><i class="fas fa-film"></i></div>
+
+                    <h3>Adobe Premiere Pro</h3>
+
+                    <p>Professional timeline editing, storytelling, audio work and long-form video production.</p>
+
+                </article>
+
+
+
+                <article class="tool-card fade-up">
+
+                    <div class="tool-icon"><i class="fas fa-wand-magic-sparkles"></i></div>
+
+                    <h3>Adobe After Effects</h3>
+
+                    <p>Motion graphics, visual effects, animated titles and advanced visual treatments.</p>
+
+                </article>
+
+
+
+                <article class="tool-card fade-up">
+
+                    <div class="tool-icon"><i class="fas fa-sliders"></i></div>
+
+                    <h3>DaVinci Resolve</h3>
+
+                    <p>Color grading, color correction and finishing for polished, cinematic visuals.</p>
+
+                </article>
+
+            </div>
+
+
+
+            <p class="tools-note fade-up">
+
+                The right workflow and tools for the needs of each project.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- WHY FORT -->
+
+    <section id="why-me" class="section-alt">
+
+        <div class="container">
+
+            <div class="fade-up section-heading-center">
+
+                <div class="eyebrow"><span class="eyebrow-dot"></span> The FORT Difference</div>
+
+                <h2>Why Work With <span class="gradient-text">FORT Production?</span></h2>
+
+                <p class="section-sub">
+
+                    A thoughtful editing process focused on quality, communication
+
+                    and the story behind your content.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="features-grid">
+
+                <div class="feature-item fade-up">
+
+                    <i class="fas fa-bolt"></i>
+
+                    <h3>Reliable Delivery</h3>
+
+                    <p>Clear timelines and communication throughout the project.</p>
+
+                </div>
+
+
+
+                <div class="feature-item fade-up">
+
+                    <i class="fas fa-eye"></i>
+
+                    <h3>Viewer-Focused</h3>
+
+                    <p>Purposeful pacing and visual variety that support the story.</p>
+
+                </div>
+
+
+
+                <div class="feature-item fade-up">
+
+                    <i class="fas fa-closed-captioning"></i>
+
+                    <h3>Clean Captions</h3>
+
+                    <p>Readable subtitles with consistent styling and accurate timing.</p>
+
+                </div>
+
+
+
+                <div class="feature-item fade-up">
+
+                    <i class="fas fa-rocket"></i>
+
+                    <h3>Creative Approach</h3>
+
+                    <p>Edits shaped around your goals, content and audience.</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- TESTIMONIALS -->
+
+    <section id="testimonials">
+
+        <div class="container">
+
+            <div class="fade-up section-heading-center">
+
+                <div class="eyebrow"><span class="eyebrow-dot"></span> Collaboration</div>
+
+                <h2>Built Around <span class="gradient-text">Your Vision.</span></h2>
+
+                <p class="section-sub">
+
+                    Every project starts with understanding your content,
+
+                    creative direction and expectations.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="testimonial-grid">
+
+                <article class="testimonial-card fade-up">
+
+                    <div class="stars"><i class="fas fa-film"></i></div>
+
+                    <p class="testimonial-text">
+
+                        “A strong edit makes the story easier to follow.
+
+                        Every scene, cut and transition should have a purpose.”
+
+                    </p>
+
+                    <p class="client-name">The FORT Editing Approach</p>
+
+                </article>
+
+
+
+                <article class="testimonial-card fade-up">
+
+                    <div class="stars"><i class="fas fa-headphones"></i></div>
+
+                    <p class="testimonial-text">
+
+                        “Good sound design and well-timed captions can make
+
+                        content feel more polished and engaging.”
+
+                    </p>
+
+                    <p class="client-name">Creative Post-Production</p>
+
+                </article>
+
+
+
+                <article class="testimonial-card fade-up">
+
+                    <div class="stars"><i class="fas fa-clapperboard"></i></div>
+
+                    <p class="testimonial-text">
+
+                        “The goal is to turn raw footage into a finished video
+
+                        that feels consistent with your brand and message.”
+
+                    </p>
+
+                    <p class="client-name">Story First. Edit Second.</p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- CONTACT -->
+
+    <section id="contact" class="contact-section">
+
+        <div class="container">
+
+            <div class="contact-inner fade-up">
+
+                <div class="eyebrow"><span class="eyebrow-dot"></span> Let's Create Something</div>
+
+                <h2>Ready to Make Your<br><span class="gradient-text">Next Video Stand Out?</span></h2>
+
+                <p>
+
+                    Have a video, YouTube channel or creative project in mind?
+
+                    Get in touch to discuss your editing requirements and ideas.
+
+                </p>
+
+
+
+                <a class="btn btn-primary"
+
+                   href="https://wa.me/92370255808"
+
+                   target="_blank" rel="noopener noreferrer">
+
+                    Start a Conversation <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+
+
+                <div class="contact-links">
+
+                    <a class="contact-card"
+
+                       href="https://wa.me/92370255808"
+
+                       target="_blank" rel="noopener noreferrer">
+
+                        <i class="fab fa-whatsapp"></i>
+
+                        +92 370 2555808
+
+                    </a>
+
+
+
+                    <a class="contact-card"
+
+                       href="https://www.instagram.com/fortprods?rpxt=MWl0eWxmdWp2bHBibA=="
+
+                       target="_blank" rel="noopener noreferrer">
+
+                        <i class="fab fa-instagram"></i>
+
+                        @fortprods
+
+                    </a>
+
+
+
+                    <a class="contact-card" href="mailto:fortproductionn@gmail.com">
+
+                        <i class="fas fa-envelope"></i>
+
+                        fortproductionn@gmail.com
+
+                    </a>
+
+                </div>
+
+
+
+                <p class="contact-note">
+
+                    Tell me about your project, the type of video you need
+
+                    and your preferred timeline.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<footer>
+
+    <div class="container">
+
+        <p>© <span id="currentYear"></span> <strong>FORT Production</strong> — Video Editing & Creative Post-Production.</p>
+
+    </div>
+
+</footer>
+
+
+
+<script>
+
+    (() => {
+
+        const root = document.documentElement;
+
+        const themeToggle = document.getElementById('themeToggle');
+
+        const themeIcon = document.getElementById('themeIcon');
+
+        const themeMeta = document.querySelector('meta[name="theme-color"]');
+
+
+
+        // Night mode is the default every time the page loads.
+
+        function setTheme(theme) {
+
+            const isDark = theme === 'dark';
+
+
+
+            root.setAttribute('data-theme', isDark ? 'dark' : 'light');
+
+
+
+            themeIcon.className = isDark ? 'fas fa-moon' : 'fas fa-sun';
+
+
+
+            themeToggle.setAttribute(
+
+                'aria-label',
+
+                isDark ? 'Switch to day theme' : 'Switch to night theme'
+
+            );
+
+
+
+            themeToggle.setAttribute(
+
+                'title',
+
+                isDark ? 'Switch to day theme' : 'Switch to night theme'
+
+            );
+
+
+
+            themeMeta.setAttribute('content', isDark ? '#05050F' : '#F7F7FC');
+
+        }
+
+
+
+        setTheme('dark');
+
+
+
+        themeToggle.addEventListener('click', () => {
+
+            const currentTheme = root.getAttribute('data-theme');
+
+            setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+
+        });
+
+
+
+        // Cinematic scroll reveal.
+
+        const fadeElements = document.querySelectorAll('.fade-up');
+
+
+
+        if ('IntersectionObserver' in window) {
+
+            const observer = new IntersectionObserver((entries, obs) => {
+
+                entries.forEach((entry) => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add('visible');
+
+                        obs.unobserve(entry.target);
+
+                    }
+
+                });
+
+            }, {
+
+                threshold: 0.08,
+
+                rootMargin: '0px 0px -25px 0px'
+
+            });
+
+
+
+            fadeElements.forEach((element) => observer.observe(element));
+
+        } else {
+
+            fadeElements.forEach((element) => element.classList.add('visible'));
+
+        }
+
+
+
+        // Subtle cursor glow on desktop.
+
+        const cursorGlow = document.getElementById('cursorGlow');
+
+
+
+        if (cursorGlow && window.matchMedia('(hover: hover) and (min-width: 769px)').matches) {
+
+            window.addEventListener('pointermove', (event) => {
+
+                cursorGlow.style.left = event.clientX + 'px';
+
+                cursorGlow.style.top = event.clientY + 'px';
+
+            }, { passive: true });
+
+        }
+
+
+
+        // Footer year.
+
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+
+
+        // Smooth in-page navigation.
+
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+
+            anchor.addEventListener('click', (event) => {
+
+                const targetId = anchor.getAttribute('href');
+
+
+
+                if (!targetId || targetId === '#') return;
+
+
+
+                const target = document.querySelector(targetId);
+
+
+
+                if (target) {
+
+                    event.preventDefault();
+
+                    target.scrollIntoView({
+
+                        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+                            ? 'auto'
+
+                            : 'smooth',
+
+                        block: 'start'
+
+                    });
+
+                }
+
+            });
+
+        });
+
+    })();
+
+</script>
+
+
+
+</body>
+
+</html>
